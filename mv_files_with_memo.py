@@ -63,7 +63,7 @@ def main():
             src_fulldir = os.path.dirname(src_fullpath)
             dst_fulldir = dst_paths[filename]
             if src_fulldir != dst_fulldir:
-                print("target: {}\n\tfrom: {}\n\tto:   {}\n".format(filename, src_fulldir, dst_fulldir))
+                print("target: {}\n  from: {}\n  to:   {}\n".format(filename, src_fulldir, dst_fulldir))
                 try:
                     sh.move(src_fullpath, dst_fulldir)
                     pass
