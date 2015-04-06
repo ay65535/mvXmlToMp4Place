@@ -35,11 +35,12 @@ def main():
     # tgt_ext_list = ['*.xml', '*[IchibaInfo].html', '*[Owner].xml', '*[ThumbImg].jpeg', '*[ThumbInfo].xml', '*.m4b']
     # tgt_ext_str = '*(.xml|[IchibaInfo].html|[Owner].xml|[ThumbImg].jpeg|[ThumbInfo].xml)'
     # tgt_ext_regex = '.*(\.xml|\[IchibaInfo\]\.html|\[Owner\]\.xml|\[ThumbImg\]\.jpeg|\[ThumbInfo\]\.xml)'
-    ext_regex = '(\.mp4|\.mkv|\.ass|\.srt|\.srt\.bak|\.xml|\.flv|\.swf|\[IchibaInfo\]\.html|\[Owner\]\.xml|\[ThumbImg\]\.jpeg|\[ThumbInfo\]\.xml)'
+    ext_regex = '(\.mp4|\.mkv|\.ass|\.srt|\.srt\.bak|\.xml|\.flv|\.swf|\[IchibaInfo\]\.html|\[Owner\]\.xml|' \
+                '\[ThumbImg\]\.jpeg|\[ThumbInfo\]\.xml)'
 
     # tgt_dir = '/Volumes/Users/ats/Music/iTunes/iTunes Media'
     tgt_dir = argvs[1]
-    #print("tgt_dir: " + tgt_dir)
+    # print("tgt_dir: " + tgt_dir)
 
     dst_ext = '.mkv'
     # dst_ext = argvs[1]
@@ -57,7 +58,7 @@ def main():
             full_path = os.path.join(root, ''.join(file_))
             if ext == dst_ext:
                 dst_files[name] = full_path
-                #print('dst_files[{}]: {}'.format(name, dst_files[name]))
+                # print('dst_files[{}]: {}'.format(name, dst_files[name]))
             else:
                 if name not in tgt_files:
                     tgt_files[name] = [full_path]
@@ -65,7 +66,7 @@ def main():
                     cur_value = tgt_files[name]
                     cur_value.append(full_path)
                     tgt_files[name] = cur_value
-                #print('tgt_files[{}]: {}'.format(name, tgt_files[name]))
+                    # print('tgt_files[{}]: {}'.format(name, tgt_files[name]))
     # print('tgt_files: {}'.format(tgt_files))
     # print('dst_files: {}'.format(dst_files))
     # exit()
